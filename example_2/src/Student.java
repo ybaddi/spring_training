@@ -31,9 +31,14 @@ public class Student {
         System.out.println(plusVoid.getClass().getSuperclass());
 
         int i=2, j=3;
-        ICalculeComplexe plusComplexe = (int x, int y) -> x*i + y*j;
+        ICalculeComplexe plusComplexe = (int x, int y) -> {
+            final int k = i+1;
+            x++;
+            return x * k + y * j;
+        };
 
-        System.out.println(plusComplexe.operationBinaire(3,5));
+        System.out.println(plusComplexe.operationBinaire(i,5));
+        System.out.println(i);
         System.out.println(plusComplexe.getClass());
         System.out.println(plusComplexe.getClass().getSuperclass());
 
