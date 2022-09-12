@@ -9,5 +9,6 @@ public class Main {
         st.iMiseFormExtend.afficherDetail();
         System.out.println(st.iMiseFormExtend.getClass());
         System.out.println(st.iMiseFormExtend.getClass().getSuperclass());
+        st.iMiseFormExtend.afficherMoreDetail();
     }
 }

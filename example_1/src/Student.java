@@ -11,10 +11,14 @@ public class Student {
         }
     };
 
-    public IMiseForme iMiseFormExtend = new IMiseForme() {
+    public IMiseFormInterface iMiseFormExtend = new IMiseFormInterface() {
         @Override
         public void afficherDetail() {
             System.out.println("hello world from iMiseFormExtend");
+        }
+
+        public void afficherMoreDetail() {
+            System.out.println("hello world from iMiseFormExtend More detail");
         }
     };
 
