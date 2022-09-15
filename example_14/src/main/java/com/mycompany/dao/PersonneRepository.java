@@ -19,6 +19,6 @@ JpaRepository<Personne,Long>{
       List<Personne> findByPrenom(String Prenom);
       
       List<Personne> findByNomContainingAndPrenomContaining(String nom,String prenom);
-      @Query("select * from Personne where nom=:nom")
-      List<Personne> getByNom(@Param("nom") String nom);
+//      @Query("select * from Personne where nom=:nom")
+//      List<Personne> getByNom(@Param("nom") String nom);
 }
