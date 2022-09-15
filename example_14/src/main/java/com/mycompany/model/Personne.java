@@ -1,9 +1,15 @@
 package com.mycompany.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Personne {
@@ -13,6 +19,13 @@ public class Personne {
 	private Long num;
 	private String nom;
 	private String prenom;
+	
+	@ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH}, 
+			fetch = FetchType.EAGER
+			)
+	private List<Adress> adresses = new ArrayList<Adress>();
+	
+	
 	public Personne() {
 		// TODO Auto-generated constructor stub
 	}
@@ -52,10 +65,20 @@ public class Personne {
 		this.prenom = prenom;
 	}
 
+	public List<Adress> getAdresses() {
+		return adresses;
+	}
+
+	public void setAdresses(List<Adress> adresses) {
+		this.adresses = adresses;
+	}
+
 	@Override
 	public String toString() {
-		return "Personne [num=" + num + ", nom=" + nom + ", prenom=" + prenom + "]";
+		return "Personne [num=" + num + ", nom=" + nom + ", prenom=" + prenom + ", adresses=" + adresses + "]";
 	}
+
+	
 	
 	
 	
